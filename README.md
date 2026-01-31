@@ -107,5 +107,382 @@ toggle.addEventListener('click', () => {
   </div>
 </section>
  <body>
+<style>
+body{
+  animation: fadePage 1s ease-in;
+}
 
+@keyframes fadePage{
+  from{opacity:0;}
+  to{opacity:1;}
+}
 
+/* Title Animation */
+h1{
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Section Heading Animation */
+h2{
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Paragraph Fade */
+p{
+  animation: fadeText 1.2s ease;
+}
+
+@keyframes fadeText{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Hover Effect */
+article:hover{
+  transform:scale(1.01);
+  transition:0.3s;
+}
+
+/* Button Animation (If You Add Buttons Later) */
+button{
+  transition:0.3s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+/* Blog Grid */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+/* Blog Card */
+.blog-card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}/* Header */
+.site-header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #202124;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .logo a {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3186FF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#darkModeToggle:hover {
+  background-color: #202124;
+  transform: scale(1.1);
+}
+
+/* Blog Content */
+.blog-content {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #202124;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .blog-content {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* Page Fade In */
+body{
+  animation: fadePage 1s ease-in;
+}
+
+@keyframes fadePage{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Title Animation */
+h1{
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Section Heading Animation */
+h2{
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Paragraph Fade */
+p{
+  animation: fadeText 1.2s ease;
+}
+
+@keyframes fadeText{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* Hover Effect */
+article:hover{
+  transform:scale(1.01);
+  transition:0.3s;
+}
+
+/* Button Animation (If You Add Buttons Later) */
+button{
+  transition:0.3s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+}
+
+/* Blog Grid */
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+/* Blog Card */
+.blog-card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.blog-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.blog-card h2{
+  color:#0a2540;
+}
+
+.blog-card p{
+  margin:15px 0;
+}
+
+/* Dark Mode Support */
+.dark .blog-card{
+  background:#141a2a;
+}
+
+.dark .blog-card h2{
+  color:#93c5fd;
+}
+
+.follow-us {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.follow-us h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.follow-us p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.social-links a img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #202124;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .logo a {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3186FF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#darkModeToggle:hover {
+  background-color: #202124;
+  transform: scale(1.1);
+}
+
+/* Blog Content */
+.blog-content {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #202124;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .blog-content {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* Dark Mode Button */
+#darkToggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  padding:8px 15px;
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* Dark Theme */
+.dark{
+  background:#0b0f19;
+  color:#e5e7eb;
+}
+
+.dark article{
+  background:#141a2a;
+  box-shadow:none;
+}
+
+.dark h1{
+  color:#93c5fd;
+}
+
+.dark h2{
+  color:#60a5fa;
+}
+
+.dark p{
+  color:#d1d5db;
+}
+</style>
